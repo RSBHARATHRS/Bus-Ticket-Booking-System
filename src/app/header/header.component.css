@@ -1,0 +1,31 @@
+.headerCnt{
+    background-color: honeydew;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+h1{
+    text-shadow: 2px 2px 2px gray;
+}
+
+.navCnt{
+  margin-left: 10%;
+}
+
+.navCnt ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+}
+
+.navCnt ul li a{
+    font-size: 22px;
+}

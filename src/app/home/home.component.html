@@ -1,0 +1,17 @@
+<div class="homeContainer">
+    <div class="container">
+        <div class="searchCnt">
+            <h2>Search Bus</h2>
+            <div class="searchInputCnt">
+                <input type="text" placeholder="From"><label>--></label><input type="text" placeholder="To">
+                <input type="button" name="" id="" value="Search">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container resCnt">
+    <div class="searchResultCnt"></div>
+    <div class="busCardCnt" *ngFor="let i of obj">
+        <app-bus [busInfo]="i" class="busCard"></app-bus>
+    </div>
+</div>

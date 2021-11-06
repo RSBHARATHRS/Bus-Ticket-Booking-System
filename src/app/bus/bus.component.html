@@ -1,0 +1,33 @@
+<div class="busInfoCnt" (click)="expand()">
+    <img [src]="busInfo.imgPath" height="100">
+    <div class="infoHolder">
+        <h2>{{busInfo.name}}</h2>
+        <p><strong>From:</strong>{{busInfo.name}}</p>
+        <p><strong>Booked Seats:</strong>{{busInfo.bookedSeats}}</p>
+        <p><strong>Available Seats:</strong>{{busInfo.availableSeats}}</p>
+    </div>
+</div>
+<div class="clr"></div>
+
+<div class="container" [style.height]="height">
+    <div class="busCnt">
+        <div class="bus">
+            <div class="driver">
+                <img src="../../assets/steering-wheel.png" alt="driver seat" width="60" height="60">
+            </div>
+            <div class="divider"></div>
+            <div class="passenderCnt">
+                <div class="passenger" *ngFor="let i of seatRows; let odd = odd; let even = even"
+                    [ngClass]="{odd : odd, even:even}">
+                    <div class="row" *ngFor="let j of seatColums">
+                        <div class="seat" (click)="select(((i -1)
+                        *seatColums.length)+j)" [style.background-color]="bgColor[((i -1)*seatColums.length)+j]">
+                            {{((i -1)*seatColums.length)+j}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>Selected Seats:{{selectedSeatCounts}}</p>
+</div>

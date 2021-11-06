@@ -21,7 +21,7 @@ export class BusListService {
         rating: 4.5
       },
       {
-        name: "mrmtravels",
+        name: "mrm",
         from: "chennai",
         to: "Tirunelveli",
         totalSeats: 32,

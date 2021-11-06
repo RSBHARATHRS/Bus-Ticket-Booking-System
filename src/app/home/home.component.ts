@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.busListObj = this.busListServic.getBusLists();
-    console.log(this.busListObj);
+    console.log("home :", this.busListObj);
   }
 
 }

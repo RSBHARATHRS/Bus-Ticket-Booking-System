@@ -1,3 +1,4 @@
+<!--Bus Info Card-->
 <div class="busInfoCnt" (click)="expand()">
     <img [src]="busInfo.imgPath" height="100">
     <div class="infoHolder">
@@ -18,6 +19,7 @@
 </div>
 <div class="clr"></div>
 
+<!--Bus Whole Information Container-->
 <div class="container" [style.height]="height">
     <div class="busCnt">
         <div class="bus">
@@ -30,7 +32,6 @@
                     [ngClass]="{odd : odd, even:even}">
 
                     <div class="row" *ngFor="let j of seatColums">
-
                         <div class="seat" (click)="select(((i -1)*seatColums.length)+j)"
                             [style.background-color]="seats[((i -1)*seatColums.length)+j]">
                             {{((i -1)*seatColums.length)+j}}

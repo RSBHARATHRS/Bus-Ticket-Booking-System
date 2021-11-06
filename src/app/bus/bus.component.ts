@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BookSeatService } from '../book-seat.service';
+import { BusListService } from '../bus-list.service';
 
 @Component({
   selector: 'app-bus',
@@ -17,13 +18,17 @@ export class BusComponent implements OnInit {
   seatColums = [1, 2, 3, 4];
   selectedSeatCounts: number;
 
-  constructor(private bookSeatService: BookSeatService) {
+  constructor(private bookSeatService: BookSeatService, private busListService: BusListService) {
     this.selectedSeatCounts = 0;
+    this.seats = "";
+    this.selectedSeatCounts = 0;
+
   }
 
   ngOnInit(): void {
     this.seatsOnStorage = this.bookSeatService.getSeats(this.busInfo.name);
     this.seats = this.seatsOnStorage;
+    this.updateSeatCount();
   }
 
   expand() {
@@ -56,6 +61,18 @@ export class BusComponent implements OnInit {
 
   bookTicket() {
     this.bookSeatService.updateSeats(this.busInfo.name, this.seats);
+    this.busInfo.availableSeats -= this.selectedSeatCounts;
+    this.busInfo.bookedSeats += this.selectedSeatCounts;
+
     this.selectedSeatCounts = 0;
+  }
+
+  updateSeatCount() {
+    for (let i of this.seatsOnStorage) {
+      if (i == "green") {
+        this.busInfo.availableSeats--;
+        this.busInfo.bookedSeats++;
+      }
+    }
   }
 }

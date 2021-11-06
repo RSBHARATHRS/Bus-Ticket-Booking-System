@@ -85,11 +85,10 @@
 
 .odd{
    
- background-color: rosybrown;
 }
 
 .even{
-    background-color: seagreen;
+
 }
 
 .seat{
@@ -98,4 +97,8 @@
     border: 1px solid rebeccapurple;
     text-align: center;
     padding: 12px;
+}
+
+.seatCount{
+    display: inline-block;
 }

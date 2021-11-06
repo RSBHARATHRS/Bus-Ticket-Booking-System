@@ -32,7 +32,7 @@
                     <div class="row" *ngFor="let j of seatColums">
 
                         <div class="seat" (click)="select(((i -1)*seatColums.length)+j)"
-                            [style.background-color]="bgColor[((i -1)*seatColums.length)+j]">
+                            [style.background-color]="seats[((i -1)*seatColums.length)+j]">
                             {{((i -1)*seatColums.length)+j}}
                         </div>
 
@@ -41,5 +41,6 @@
             </div>
         </div>
     </div>
-    <p>Selected Seats : {{selectedSeatCounts}}</p>
+    <p class="seatCount">Selected Seats : {{selectedSeatCounts}}</p>
+    <button (click)="bookTicket()">Book</button>
 </div>

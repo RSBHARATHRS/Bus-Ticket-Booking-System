@@ -9,12 +9,12 @@ import { BusListService } from '../bus-list.service';
 export class HomeComponent implements OnInit {
 
 
-  obj: any;
+  busListObj: any;
   constructor(private busListServic: BusListService) { }
 
   ngOnInit(): void {
-    this.obj = this.busListServic.getBusLists();
-    console.log(this.obj);
+    this.busListObj = this.busListServic.getBusLists();
+    console.log(this.busListObj);
   }
 
 }

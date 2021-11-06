@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BookSeatService } from '../book-seat.service';
 
 @Component({
   selector: 'app-bus',
@@ -10,25 +11,19 @@ export class BusComponent implements OnInit {
   @Input() busInfo: any;
 
   height = "0";
-  bgColor: any;
+  seats: any;
+  seatsOnStorage: any;
   seatRows = [1, 2, 3, 4, 5, 6, 7, 8];
   seatColums = [1, 2, 3, 4];
   selectedSeatCounts: number;
-  constructor() {
 
-    this.busInfo = {
-      name: "mrmtravels",
-      ac: "none",
-      totalSeats: 32,
-      bookedSeats: 0,
-      availableSeats: 32,
-    }
-
-    this.bgColor = [];
+  constructor(private bookSeatService: BookSeatService) {
     this.selectedSeatCounts = 0;
   }
 
   ngOnInit(): void {
+    this.seatsOnStorage = this.bookSeatService.getSeats(this.busInfo.name);
+    this.seats = this.seatsOnStorage;
   }
 
   expand() {
@@ -41,18 +36,26 @@ export class BusComponent implements OnInit {
   }
 
   select(seatNum: any) {
-    if (this.bgColor[seatNum] == "green") {
-      this.bgColor[seatNum] = "";
+    if (this.seatsOnStorage[seatNum] == "green") {
+      alert("alredy booked");
+      return;
+    }
+    if (this.seats[seatNum] == "orange") {
+      this.seats[seatNum] = "";
       this.selectedSeatCounts--;
       return;
     }
-
     if (this.selectedSeatCounts == 6) {
       alert("One person can only book upto 6 seats");
       return;
     }
-    this.bgColor[seatNum] = "green";
+    this.seats[seatNum] = "orange";
     this.selectedSeatCounts++;
-    console.log(this.bgColor);
+    console.log(this.seats);
+  }
+
+  bookTicket() {
+    this.bookSeatService.updateSeats(this.busInfo.name, this.seats);
+    this.selectedSeatCounts = 0;
   }
 }

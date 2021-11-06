@@ -2,9 +2,18 @@
     <img [src]="busInfo.imgPath" height="100">
     <div class="infoHolder">
         <h2>{{busInfo.name}}</h2>
-        <p><strong>From:</strong>{{busInfo.name}}</p>
-        <p><strong>Booked Seats:</strong>{{busInfo.bookedSeats}}</p>
-        <p><strong>Available Seats:</strong>{{busInfo.availableSeats}}</p>
+        <p><strong>From : </strong>{{busInfo.from}}</p>
+        <p><strong>To : </strong>{{busInfo.to}}</p>
+    </div>
+    <div class="infoHolder">
+        <p><strong>Total Seats : </strong>{{busInfo.totalSeats}}</p>
+        <p><strong>Booked Seats : </strong>{{busInfo.bookedSeats}}</p>
+        <p><strong>Available Seats : </strong>{{busInfo.availableSeats}}</p>
+    </div>
+    <div class="infoHolder">
+        <span class="rating">{{busInfo.rating}}</span>
+        <p><strong>Booked Seats : </strong>{{busInfo.bookedSeats}}</p>
+        <p><strong>Available Seats : </strong>{{busInfo.availableSeats}}</p>
     </div>
 </div>
 <div class="clr"></div>
@@ -19,15 +28,18 @@
             <div class="passenderCnt">
                 <div class="passenger" *ngFor="let i of seatRows; let odd = odd; let even = even"
                     [ngClass]="{odd : odd, even:even}">
+
                     <div class="row" *ngFor="let j of seatColums">
-                        <div class="seat" (click)="select(((i -1)
-                        *seatColums.length)+j)" [style.background-color]="bgColor[((i -1)*seatColums.length)+j]">
+
+                        <div class="seat" (click)="select(((i -1)*seatColums.length)+j)"
+                            [style.background-color]="bgColor[((i -1)*seatColums.length)+j]">
                             {{((i -1)*seatColums.length)+j}}
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <p>Selected Seats:{{selectedSeatCounts}}</p>
+    <p>Selected Seats : {{selectedSeatCounts}}</p>
 </div>

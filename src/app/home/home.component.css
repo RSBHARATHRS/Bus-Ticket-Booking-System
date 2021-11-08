@@ -15,17 +15,18 @@
 
 .searchInputCnt input[type="text"]{
     border: none;
-    border-bottom: 1px solid gray;
+    border-bottom: 3px solid black;
     padding: 6px;
     font-size: 22px;
     outline: none;
     margin: 20px;
-    backface-visibility: hidden;
+    
     background:transparent;
 }
 
 .searchInputCnt input[type="text"]::placeholder{
     font-size: 22px;
+    color: black;
 }
 
 .searchInputCnt input[type="button"]{
@@ -44,9 +45,9 @@
     width: 20%;
     float: left;
     backface-visibility: calc(40%);
-    background: chartreuse;
-    border: 1px solid orange;
+    background: rgba(75, 77, 73,0.6);
     height: auto;
+    height: 80vh;
 }
 
 .busCardCnt{

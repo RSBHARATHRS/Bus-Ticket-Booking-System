@@ -17,12 +17,13 @@ export class BusComponent implements OnInit {
   seatRows = [1, 2, 3, 4, 5, 6, 7, 8];
   seatColums = [1, 2, 3, 4];
   selectedSeatCounts: number;
+  sideInWidth: string;
 
   constructor(private bookSeatService: BookSeatService, private busListService: BusListService) {
     this.selectedSeatCounts = 0;
     this.seats = "";
     this.selectedSeatCounts = 0;
-
+    this.sideInWidth = "hidden";
   }
 
   ngOnInit(): void {
@@ -33,7 +34,7 @@ export class BusComponent implements OnInit {
 
   expand() {
     if (this.height == "0") {
-      this.height = "320px";
+      this.height = "350px";
     } else {
       this.height = "0";
     }
@@ -48,6 +49,7 @@ export class BusComponent implements OnInit {
     if (this.seats[seatNum] == "orange") {
       this.seats[seatNum] = "";
       this.selectedSeatCounts--;
+      this.sideInShow(this.selectedSeatCounts);
       return;
     }
     if (this.selectedSeatCounts == 6) {
@@ -56,7 +58,7 @@ export class BusComponent implements OnInit {
     }
     this.seats[seatNum] = "orange";
     this.selectedSeatCounts++;
-    console.log(this.seats);
+    this.sideInShow(this.selectedSeatCounts);
   }
 
   bookTicket() {
@@ -73,6 +75,14 @@ export class BusComponent implements OnInit {
         this.busInfo.availableSeats--;
         this.busInfo.bookedSeats++;
       }
+    }
+  }
+
+  sideInShow(seatN: any) {
+    if (seatN == "0") {
+      this.sideInWidth = "hidden";
+    } else {
+      this.sideInWidth = "visible";
     }
   }
 }

@@ -18,7 +18,9 @@ export class BusListService {
         bookedSeats: 0,
         availableSeats: 32,
         imgPath: "../assets/bus1.png",
-        rating: 4.5
+        rating: 4.5,
+        price: 600,
+        departureTime: 22302234
       },
       {
         name: "mrm",
@@ -28,7 +30,9 @@ export class BusListService {
         bookedSeats: 0,
         availableSeats: 32,
         imgPath: "../assets/bus2.png",
-        rating: 3
+        rating: 3,
+        price: 800,
+        departureTime: 60000
       }
     ];
     let strForm = [];

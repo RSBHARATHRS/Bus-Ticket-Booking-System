@@ -1,0 +1,11 @@
+.userInputCnt{
+    border: 1px solid gray;
+}
+
+label{
+    margin: 10px 0;
+}
+
+input{
+    margin: 10px 0;
+}

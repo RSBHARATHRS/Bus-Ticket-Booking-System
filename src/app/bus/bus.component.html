@@ -13,8 +13,8 @@
     </div>
     <div class="infoHolder">
         <span class="rating">{{busInfo.rating}}</span>
-        <p><strong>Booked Seats : </strong>{{busInfo.bookedSeats}}</p>
-        <p><strong>Available Seats : </strong>{{busInfo.availableSeats}}</p>
+        <p><strong>Price : </strong>{{busInfo.price | currency:'INR'}}</p>
+        <p><strong>Departure Time : </strong>{{busInfo.departureTime | date:'HH:mm a'}}</p>
     </div>
 </div>
 <div class="clr"></div>
@@ -41,7 +41,13 @@
                 </div>
             </div>
         </div>
+        <div class="sideInput" [style.visibility]="sideInWidth">
+            <app-user-details-input></app-user-details-input>
+            <button (click)="bookTicket()">Book</button>
+        </div>
+
     </div>
+
     <p class="seatCount">Selected Seats : {{selectedSeatCounts}}</p>
-    <button (click)="bookTicket()">Book</button>
+
 </div>

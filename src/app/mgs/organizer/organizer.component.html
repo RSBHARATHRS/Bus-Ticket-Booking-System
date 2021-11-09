@@ -1,0 +1,17 @@
+<p>organizer works!</p>
+<p *ngFor="let msg of msgs">
+
+    {{msg}}
+
+</p>
+
+
+
+
+<h4>
+
+    <input type="text" name="r1" #mymsg>
+
+    <button (click)=send(mymsg.value)>Rama </button>
+
+</h4>

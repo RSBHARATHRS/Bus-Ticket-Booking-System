@@ -8,6 +8,10 @@ import { BusComponent } from './bus/bus.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { UserDetailsInputComponent } from './user-details-input/user-details-input.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { MgsComponent } from './mgs/mgs.component';
+import { ClientComponent } from './mgs/client/client.component';
+import { OrganizerComponent } from './mgs/organizer/organizer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { UserDetailsInputComponent } from './user-details-input/user-details-inp
     BusComponent,
     LoginComponent,
     HeaderComponent,
-    UserDetailsInputComponent
+    UserDetailsInputComponent,
+    LifecycleComponent,
+    MgsComponent,
+    ClientComponent,
+    OrganizerComponent
   ],
   imports: [
     BrowserModule,

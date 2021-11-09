@@ -1,0 +1,14 @@
+<p>client works!</p>
+<p *ngFor="let msg of msgs">
+
+    {{msg}}
+
+</p>
+
+<h4>
+
+    <input type="text" name="s1" #mymsg>
+
+    <button (click)=send(mymsg.value)>Seetha</button>
+
+</h4>

@@ -1,11 +1,14 @@
 .userInputCnt{
     border: 1px solid gray;
-}
+    background-image: linear-gradient(rgb(6, 149, 49),rgb(134, 250, 153));
+    border-radius: 10px;
+    padding: 6px;
+}   
 
 label{
     margin: 10px 0;
 }
 
 input{
-    margin: 10px 0;
+    margin: 1px 0;
 }

@@ -1,23 +1,29 @@
 .headerCnt{
     background-color: honeydew;
-    position: sticky;
-    top: 0;
-    z-index: 2;
+    position: relative;
+    width: 100%;
+   height: 12vh;
+   box-shadow: 3px 3px 8px 1px gray;
 }
 
-.container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.container > img{
+ float: left;
     
 }
 
 h1{
     text-shadow: 2px 2px 2px gray;
+    float: left;
+    margin-top: 28px;
 }
 
 .navCnt{
-  margin-left: 10%;
+  float: right;
+}
+
+.navCnt nav{
+    float: right;
+    padding: 20px;
 }
 
 .navCnt ul li{

@@ -8,12 +8,16 @@ import { BusListService } from './bus-list.service';
 export class BookSeatService {
   busList: any;
   seatsArr: any;
+
+  selectedDate: string;
+
   constructor(private busListService: BusListService) {
     this.busList = busListService.getBusLists();
 
     console.log("msg from servic2", this.busList);
 
     this.seatsArr = [];
+    this.selectedDate = "";
   }
 
   getSeats(busName: any): any {

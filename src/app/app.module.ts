@@ -12,7 +12,7 @@ import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { MgsComponent } from './mgs/mgs.component';
 import { ClientComponent } from './mgs/client/client.component';
 import { OrganizerComponent } from './mgs/organizer/organizer.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { OrganizerComponent } from './mgs/organizer/organizer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

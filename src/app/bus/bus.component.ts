@@ -11,6 +11,7 @@ export class BusComponent implements OnInit {
 
   @Input() busInfo: any;
 
+
   height = "0";
   seats: any;
   seatsOnStorage: any;
@@ -19,11 +20,13 @@ export class BusComponent implements OnInit {
   selectedSeatCounts: number;
   sideInWidth: string;
 
+  amount: number;
   constructor(private bookSeatService: BookSeatService, private busListService: BusListService) {
     this.selectedSeatCounts = 0;
     this.seats = "";
     this.selectedSeatCounts = 0;
     this.sideInWidth = "hidden";
+    this.amount = 0;
   }
 
   ngOnInit(): void {
@@ -49,6 +52,7 @@ export class BusComponent implements OnInit {
     if (this.seats[seatNum] == "orange") {
       this.seats[seatNum] = "";
       this.selectedSeatCounts--;
+      this.amount -= 800;
       this.sideInShow(this.selectedSeatCounts);
       return;
     }
@@ -58,6 +62,7 @@ export class BusComponent implements OnInit {
     }
     this.seats[seatNum] = "orange";
     this.selectedSeatCounts++;
+    this.amount += 800;
     this.sideInShow(this.selectedSeatCounts);
   }
 
@@ -67,6 +72,7 @@ export class BusComponent implements OnInit {
     this.busInfo.bookedSeats += this.selectedSeatCounts;
 
     this.selectedSeatCounts = 0;
+    this.amount = 0;
   }
 
   updateSeatCount() {

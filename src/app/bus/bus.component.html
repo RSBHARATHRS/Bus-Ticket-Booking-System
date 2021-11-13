@@ -56,12 +56,14 @@
             </div>
         </div>
         <div class="sideInput" [style.visibility]="sideInWidth">
-            <app-user-details-input></app-user-details-input>
+            <app-user-details-input [amount]="amount"></app-user-details-input>
             <button (click)="bookTicket()">Book</button>
         </div>
 
     </div>
-
-    <p class="seatCount">Selected Seats : {{selectedSeatCounts}}</p>
-
+    <div class="colorInfo">
+        <p class="seatCount"><span class="seatColorInfo s"></span>Selected Seats : {{selectedSeatCounts}}</p>
+        <p class="seatCount"><span class="seatColorInfo a"></span>Available seats : {{selectedSeatCounts}}</p>
+        <p class="seatCount"><span class="seatColorInfo b"></span>Booked Seats : {{selectedSeatCounts}}</p>
+    </div>
 </div>

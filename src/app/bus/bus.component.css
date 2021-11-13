@@ -8,6 +8,8 @@
 
 .busCnt{
     display: flex;
+    border: 0px solid gray;
+    width: 100%;
 }
 
 .busInfoCnt > img{
@@ -49,7 +51,7 @@
     height: 0px;
     overflow: hidden;
     transition: all .6s ease;
-    width: 90%!important;
+    width: 98%!important;
     margin: 10px;
 }
 
@@ -90,12 +92,29 @@
     
 }
 
-.odd{
-   
+
+.colorInfo{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.seatColorInfo{
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    margin: 0  10px;
 }
 
-.even{
+.a{
+    background-color: #4C4646;
+}
 
+.b{
+    background-color: #007600;
+}
+
+.s{
+    background-color: #FFA500;
 }
 
 .seat{
@@ -103,6 +122,10 @@
     height: 50px;
     border: 0px solid rebeccapurple;
     text-align: center;
+}
+
+.sideInput{
+    padding: 0 6px;
 }
 
 .cls{
@@ -113,10 +136,7 @@
     display: inline-block;
 }
 
-.sideInput{
-  
-  
-}
+
 
 .sideInput > button{
     padding: 10px;
